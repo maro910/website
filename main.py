@@ -28,6 +28,12 @@ def home():
 def about():
   return render_template('about.html', subtitle='About Page', text='Learn more about me!')
 
+@app.route("/captions")
+def captions():
+  TITLE = "Yee"
+  FILE_NAME = "Yee.wav"
+  return render_template("captions.html", songName=TITLE, file=FILE_NAME)
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
